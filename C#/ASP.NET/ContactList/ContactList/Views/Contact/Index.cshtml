@@ -1,4 +1,4 @@
-﻿@model List<string>; // if the object type is not of type string then it will throw an error
+﻿@model List<Contact>; // if the object type is not of type string then it will throw an error
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,16 +11,27 @@
     <table id="contact-table" class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
             <tr>
+                <th> ID </th>
                 <th> Name </th>
+                <th> Email </th>
+                <th> Phone Number </th>
+                <th> Website </th>
+                <th> Actions </th>
             </tr>
         </thead>
         <tbody>
             <!-- loop through each of the contacts in the List -->
-            @foreach(string name in Model)
+            @foreach(Contact contact in Model)
             {
                 <tr>
-                    <td> @name </td>
+                    <td> @contact.Id </td>
+                    <td> @contact.Name </td>
+                    <td> @contact.Email </td>
+                    <td> @contact.PhoneNumber </td>
+                    <td> @contact.Website </td>
+                    <td> @Html.ActionLink("Details", "Details", "Contact", new {contactId = contact.Id}) </td>
                 </tr>
+
             }
         </tbody>
     </table>

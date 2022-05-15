@@ -1,10 +1,20 @@
-﻿<div class="m-3">
+﻿@model Contact
+
+<div class="m-3">
     <h1 class="mb-3 text-center">Add new contact</h1>
     <!-- Go to the ContactController then call the Add method what has a method of Post-->
     @using (Html.BeginForm("Add", "Contact", FormMethod.Post))
     {
         <div class="form-group mb-3">
-            @Html.EditorFor(contact => contact, null, "newContact", new {htmlAttributes = new {@class = "form-control"}})
+            <!-- Cleaner way to do this? -->
+            @Html.LabelFor(contact => contact.Name)
+            @Html.EditorFor(contact => contact.Name, null, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.LabelFor(contact => contact.PhoneNumber)
+            @Html.EditorFor(contact => contact.PhoneNumber, null, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.LabelFor(contact => contact.Email)
+            @Html.EditorFor(contact => contact.Email, null, new {htmlAttributes = new {@class = "form-control"}})
+            @Html.LabelFor(contact => contact.Website)
+            @Html.EditorFor(contact => contact.Website, null, new {htmlAttributes = new {@class = "form-control"}})
         </div>
         <button type="submit" id="submit-button" class="btn btn-primary">Add contact!</button>
     }
