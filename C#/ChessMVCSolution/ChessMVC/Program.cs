@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ChessMVC.Controllers;
+
+namespace ChessMVC
+{  
+    class ChessMVC
+    {
+        static void Main(string[] args)
+        {
+            PieceController.GeneratePieces();
+        }
+    }
+}
