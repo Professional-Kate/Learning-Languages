@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // returns a char pointer for our full char[]
 char* readUserInput()
@@ -17,7 +18,7 @@ int main()
 {
   char* returnValue = readUserInput(); // capture that pointer to be used later
   printf("%s", returnValue);
-  free(returnValue); // free the memory we use for the varible so we don't memory leak
+  free(returnValue); // free the memory we use for the variable so we don't memory leak
 
   return 0;
 }
