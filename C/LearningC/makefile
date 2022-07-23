@@ -3,7 +3,7 @@ file_name = main # name of the main file
 
 compile_execute:
 	@${CC} -o ${file_name} main.c
-	@./${file_name}.exe
+	@./${file_name}
 
 clean: 
 	@echo "I do be cleaning..."
